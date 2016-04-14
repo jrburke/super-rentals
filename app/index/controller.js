@@ -5,7 +5,7 @@ export default Ember.Controller.extend({
   actions: {
     autoComplete(param) {
       if(param !== "") {
-        this.store.query('rental', {city: param}).then((result) => {
+        this.store.query('models/rental', {city: param}).then((result) => {
           this.set('filteredList',result);
         });
       } else {
@@ -14,8 +14,8 @@ export default Ember.Controller.extend({
     },
     search(param) {
       let storeAction = param ?
-        this.store.query('rental', {city: param}) :
-        this.store.findAll('rental');
+        this.store.query('models/rental', {city: param}) :
+        this.store.findAll('models/rental');
 
       storeAction.then((result) => {
         this.set('model', result);

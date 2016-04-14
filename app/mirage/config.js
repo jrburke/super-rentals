@@ -1,7 +1,9 @@
 export default function() {
+  this.namespace = '/models';
+
   this.get('/rentals', function(db, request) {
     let rentals = [{
-      type: 'rentals',
+      type: 'models/rental',
       id: 1,
       attributes: {
         title: 'Grand Old Mansion',
@@ -12,7 +14,7 @@ export default function() {
         image: 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Crane_estate_(5).jpg'
       }
     }, {
-      type: 'rentals',
+      type: 'models/rental',
       id: 2,
       attributes: {
         title: 'Urban Living',
@@ -23,7 +25,7 @@ export default function() {
         image: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Alfonso_13_Highrise_Tegucigalpa.jpg'
       }
     }, {
-      type: 'rentals',
+      type: 'models/rental',
       id: 3,
       attributes: {
         title: 'Downtown Charm',
